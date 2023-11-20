@@ -1,0 +1,13 @@
+---
+import { ILink } from '../interfaces/';
+
+export interface Props {
+    link: ILink;
+}
+
+const { link } = Astro.props as Props;
+---
+
+<li>
+    <a href={link.href}>{link.text}</a>
+</li>

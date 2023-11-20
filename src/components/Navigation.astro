@@ -1,0 +1,18 @@
+---
+import NavigationLink from './NavigationLink.astro';
+const links = [
+    { href: '/about', text: 'About' },
+    { href: '/projects', text: 'Projects' },
+    { href: '/blog', text: 'Blog' },
+];
+---
+
+<nav>
+    <ul>
+        {
+            links.map((link) => {
+                return <NavigationLink link={link} />;
+            })
+        }
+    </ul>
+</nav>
