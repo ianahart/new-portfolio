@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { frontEndSkills, backendSkills } from '../data/skills.ts';
+import Socials from '../components/Socials.astro';
+import Skills from '../components/Skills.astro';
 const pageTitle = 'Home';
 ---
 
@@ -7,18 +10,41 @@ const pageTitle = 'Home';
     <h1>I Create Things</h1>
     <div class="home-container">
         <div class="three-container"></div>
+        <div class="socials-container">
+            <Socials />
+        </div>
+        <div class="skills-container">
+            <Skills className="frontend" skills={frontEndSkills} />
+            <Skills className="backend" skills={backendSkills} />
+        </div>
     </div>
 
     <style>
+        .socials-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 5rem;
+            padding: 1rem;
+        }
+
         h1 {
             text-transform: uppercase;
             text-align: center;
-            font: 900 120px/1 'Source Sans Pro', Arial, sans-serif;
+            font: 900 80px/1 'Source Sans Pro', Arial, sans-serif;
             color: #dadada;
             margin-top: 2rem;
             text-align: center;
             letter-spacing: -3px;
-
             text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
                 0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
                 0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
@@ -32,6 +58,12 @@ const pageTitle = 'Home';
             width: 100%;
             height: 100%;
             display: block;
+        }
+
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+            }
         }
     </style>
 

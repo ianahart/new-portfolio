@@ -1,0 +1,54 @@
+---
+export interface Skill {
+    text: string;
+    icon: string;
+}
+
+export interface Props {
+    skill: Skill;
+}
+
+const { skill } = Astro.props as Props;
+---
+
+<div class="skill-container">
+    <p>{skill.text}</p>
+    <div class="icon-container">
+        <i class={skill.icon}></i>
+    </div>
+</div>
+
+<style>
+    .skill-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 120px;
+        margin: 1rem;
+    }
+
+    .skill-container p {
+        font-weight: bold;
+        font-size: 0.9rem;
+        color: var(--main-text-color);
+    }
+
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: var(--main-blue-color);
+        border-radius: 50%;
+        margin-left: 0.25rem;
+        height: 30px;
+        width: 30px;
+        color: var(--main-text-color);
+    }
+
+    @media (max-width: 768px) {
+        .skill-container {
+            margin: 0 1rem;
+        }
+    }
+</style>

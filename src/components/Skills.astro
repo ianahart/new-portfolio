@@ -1,0 +1,82 @@
+---
+import Skill from './Skill.astro';
+export interface Props {
+    skills: { text: string; icon: string }[];
+    className: string;
+}
+
+const { skills, className } = Astro.props as Props;
+---
+
+<div class=`skills ${className}`>
+    {
+        skills.map((skill) => {
+            return <Skill skill={skill} />;
+        })
+    }
+</div>
+
+<style>
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 8px;
+        box-shadow: var(--main-box-shadow);
+        background: var(--main-black-color);
+        transition: all 0.25s ease-in;
+    }
+
+    .frontend {
+        transform: translateX(-250px);
+    }
+
+    .backend {
+        transform: translateX(250px);
+    }
+
+    @media (max-width: 768px) {
+        .frontend {
+            transform: translateX(-100px);
+        }
+
+        .backend {
+            transform: translateX(100px);
+        }
+    }
+</style>
+
+<script>
+    const frontendSkillsEl = document.querySelector<HTMLDivElement>('.frontend');
+    const backendSkillsEl = document.querySelector<HTMLDivElement>('.backend');
+
+    const createObserver = (element: HTMLDivElement) => {
+        let options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2,
+        };
+
+        let callback = (
+            entries: IntersectionObserverEntry[],
+            observer: IntersectionObserver
+        ) => {
+            entries.forEach((entry: any) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'translateX(0)';
+                    observer.disconnect();
+                }
+            });
+        };
+
+        let observer = new IntersectionObserver(callback, options);
+
+        observer.observe(element as Element);
+    };
+
+    if (frontendSkillsEl && backendSkillsEl) {
+        createObserver(frontendSkillsEl);
+        createObserver(backendSkillsEl);
+    }
+</script>
