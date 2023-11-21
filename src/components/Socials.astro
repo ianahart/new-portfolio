@@ -1,0 +1,33 @@
+---
+const socials = [
+    {
+        text: 'threads',
+        href: 'https://www.threads.net/@ianhart',
+        icon: 'fa-brands fa-threads',
+    },
+    { text: 'X', href: 'https://twitter.com/ianhart720', icon: 'fa-brands fa-x-twitter' },
+    {
+        text: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/ian-h-314141127/',
+        icon: 'fa-brands fa-linkedin-in',
+    },
+];
+
+import Social from './Social.astro';
+---
+
+<div class="socials">
+    {
+        socials.map(({ href, icon, text }) => {
+            return <Social text={text} href={href} icon={icon} />;
+        })
+    }
+</div>
+
+<style>
+    .socials {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+</style>

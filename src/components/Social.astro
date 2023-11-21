@@ -1,0 +1,92 @@
+---
+export interface Props {
+    href: string;
+    icon: string;
+    text: string;
+}
+
+const { href, icon, text } = Astro.props;
+---
+
+<div class="social">
+    <div class="tooltip hidden">
+        {text}
+    </div>
+    <a rel="noopener noreferrer" target="_blank" href={href}>
+        <i class={icon}></i>
+    </a>
+</div>
+
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .tooltip {
+        text-align: center;
+        font-weight: bold;
+        min-width: 60px;
+        color: var(--main-text-color);
+        background: var(--main-black-color);
+        padding: 0.5rem;
+        border-radius: 8px;
+        position: absolute;
+        right: -30px;
+        top: -40px;
+        transition: all 0.25s ease-in;
+        animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    i {
+        font-size: 1.5rem;
+    }
+
+    a {
+        color: #fff;
+    }
+
+    .social {
+        position: relative;
+        display: flex;
+        background: var(--main-blue-color);
+        border-radius: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 60px;
+        margin: 1rem;
+    }
+</style>
+
+<script>
+    const socials = document.querySelectorAll<HTMLDivElement>('.social');
+
+    const handleMouseEnter = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (target.firstElementChild?.classList.contains('hidden')) {
+            target.firstElementChild?.classList.remove('hidden');
+        }
+    };
+
+    const handleMouseLeave = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (!target.firstElementChild?.classList.contains('hidden')) {
+            target.firstElementChild?.classList.add('hidden');
+        }
+    };
+
+    socials.forEach((social) => {
+        social.addEventListener('mouseenter', handleMouseEnter);
+        social.addEventListener('mouseleave', handleMouseLeave);
+    });
+</script>
