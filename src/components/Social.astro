@@ -18,6 +18,10 @@ const { href, icon, text } = Astro.props;
 </div>
 
 <style>
+    .social {
+        transition: all 0.25s ease-in;
+    }
+
     .hidden {
         display: none;
     }
@@ -35,6 +39,10 @@ const { href, icon, text } = Astro.props;
         top: -40px;
         transition: all 0.25s ease-in;
         animation: fadeIn 0.5s;
+    }
+
+    .social:hover {
+        transform: rotate(10deg) scale(1.1);
     }
 
     @keyframes fadeIn {
