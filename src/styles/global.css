@@ -18,7 +18,9 @@
   );
   --main-text-color: #fff;
   --main-black-color: #23262d;
+  --secondary-black-color: rgba(0, 0, 0, 0.36);
   --main-blue-color: #12205c;
+  --main-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 *,

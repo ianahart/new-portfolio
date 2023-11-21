@@ -1,5 +1,9 @@
 ---
-import { ILink } from '../interfaces/';
+export interface ILink {
+    href: string;
+    text: string;
+    icon: string;
+}
 
 export interface Props {
     link: ILink;
@@ -8,6 +12,68 @@ export interface Props {
 const { link } = Astro.props as Props;
 ---
 
-<li>
-    <a href={link.href}>{link.text}</a>
+<li class="link">
+    <a href={link.href}>
+        <div class="link-container">
+            <div class="link-text-container">
+                <i class={`icon ${link.icon}`}></i>
+                <p>{link.text}</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+    </a>
 </li>
+
+<style>
+    i {
+        display: none;
+    }
+
+    li {
+        margin: 0.5rem;
+    }
+
+    li a {
+        text-decoration: none;
+        color: var(--main-text-color);
+        font-weight: bold;
+        transition: all 0.25 ease-in;
+    }
+
+    li a:hover {
+        opacity: 0.8;
+    }
+
+    @media (max-width: 600px) {
+        .link {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .link:hover {
+            background: var(--secondary-black-color);
+        }
+
+        i {
+            display: block;
+        }
+
+        .icon {
+            margin-right: 0.5rem;
+        }
+
+        .link-text-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+</style>

@@ -1,0 +1,47 @@
+---
+---
+
+<div class="hamburger">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+</div>
+
+<style>
+    .hamburger {
+        display: block;
+        padding-right: 0.5rem;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin-bottom: 10px;
+        background-color: var(--main-text-color);
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .hamburger {
+            display: block;
+        }
+    }
+</style>
+
+<script>
+    const links = document.querySelector<HTMLUListElement>('.links');
+    const hamburger = document.querySelector<HTMLDivElement>('.hamburger');
+
+    const toggleHamburger = () => {
+        links?.classList.toggle('expanded-links');
+    };
+
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleHamburger);
+    }
+</script>
