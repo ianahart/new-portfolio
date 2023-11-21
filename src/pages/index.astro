@@ -4,5 +4,38 @@ const pageTitle = 'Home';
 ---
 
 <Layout pageTitle={pageTitle}>
-    <h1>test</h1>
+    <h1>I Create Things</h1>
+    <div class="home-container">
+        <div class="three-container"></div>
+    </div>
+
+    <style>
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+            font: 900 120px/1 'Source Sans Pro', Arial, sans-serif;
+            color: #dadada;
+            margin-top: 2rem;
+            text-align: center;
+            letter-spacing: -3px;
+
+            text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
+                0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
+                0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
+                0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
+                0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
+                0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
+                0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+
+    <script>
+        import '../scripts/3dBlocks.ts';
+    </script>
 </Layout>
