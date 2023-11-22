@@ -3,13 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import { frontEndSkills, backendSkills } from '../data/skills.ts';
 import Socials from '../components/Socials.astro';
 import Skills from '../components/Skills.astro';
+import FunnyQuote from '../components/FunnyQuote.astro';
 const pageTitle = 'Home';
 ---
 
 <Layout pageTitle={pageTitle}>
-    <h1>I Create Things</h1>
+    <h2>I</h2>
+    <h2>Create</h2>
+    <h2>Things</h2>
     <div class="home-container">
         <div class="three-container"></div>
+        <div class="quote-container">
+            <FunnyQuote />
+        </div>
         <div class="socials-container">
             <Socials />
         </div>
@@ -18,13 +24,18 @@ const pageTitle = 'Home';
             <Skills className="backend" skills={backendSkills} />
         </div>
     </div>
-
     <style>
         .socials-container {
             display: flex;
             justify-content: center;
             max-width: 1200px;
             margin: 3rem auto;
+        }
+
+        .quote-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
         }
 
         .skills-container {
@@ -35,15 +46,16 @@ const pageTitle = 'Home';
             margin: 0 auto;
             margin-top: 5rem;
             padding: 1rem;
+            overflow: hidden;
         }
 
-        h1 {
+        h2 {
             text-transform: uppercase;
             text-align: center;
             font: 900 80px/1 'Source Sans Pro', Arial, sans-serif;
             color: #dadada;
-            margin-top: 2rem;
             text-align: center;
+            margin-top: 1rem;
             letter-spacing: -3px;
             text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
                 0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
