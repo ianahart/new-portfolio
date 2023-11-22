@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
 import { frontEndSkills, backendSkills } from '../data/skills.ts';
 import Socials from '../components/Socials.astro';
 import Skills from '../components/Skills.astro';
@@ -22,6 +23,9 @@ const pageTitle = 'Home';
         <div class="skills-container">
             <Skills className="frontend" skills={frontEndSkills} />
             <Skills className="backend" skills={backendSkills} />
+        </div>
+        <div class="contact-form-container">
+            <ContactForm />
         </div>
     </div>
     <style>
@@ -47,6 +51,14 @@ const pageTitle = 'Home';
             margin-top: 5rem;
             padding: 1rem;
             overflow: hidden;
+        }
+
+        .contact-form-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 5rem auto;
+            margin-top: 12rem;
         }
 
         h2 {
