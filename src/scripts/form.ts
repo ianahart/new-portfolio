@@ -80,7 +80,7 @@ export const handleFormSubmit = (form: HTMLFormElement) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(data as any).toString(),
     })
-      .then(() => console.log('Form successfully submitted'))
+      .then(() => form.reset())
       .catch((error) => {
         throw new Error(error);
       });
