@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import me from '../assets/headshot.jpg?url';
+import meSnowboarding from '../assets/snowboard_bg.jpeg?url';
+---
+
+<Layout pageTitle="About">
+    <div class="about-container">
+        <div class="inner-container">
+            <header>
+                <h1>Welcome.</h1>
+            </header>
+            <div class="content">
+                <div class="about-me">
+                    <p>
+                        I'm a Web Developer from central New Hampshire. Before I got into
+                        creating websites and applications, I was a professional
+                        snowboarder. I started competing around the East Coast of the US
+                        and eventually started to compete in international competitions as
+                        well as starring in snowboard films.
+                    </p>
+
+                    <p>
+                        Computers have always been a passion of mine which led me to
+                        becoming a web developer. Some people seem to link creativty with
+                        art, music, dance, etc. For myself, with programming I can show my
+                        creativity by building something that has the possibility to be
+                        used by other people and I think that is pretty awesome.
+                    </p>
+                </div>
+                <div class="img-container">
+                    <img src={me} alt="a headshot of ian hart" />
+                    <img src={meSnowboarding} alt="ian hart snowboarding" />
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .img-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-container img {
+        width: 150px;
+        height: 150px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .about-container {
+        position: relative;
+        max-width: 1200px;
+        min-height: 600px;
+        margin: 0 auto;
+        margin-top: 5rem;
+        color: var(--main-text-color);
+    }
+
+    .inner-container {
+        margin: 0 auto;
+        padding: 1rem;
+        padding-left: 5rem;
+        min-height: 600px;
+        border-width: 30px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, #12205c, rgba(31, 241, 191, 1)) 1 100%;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me {
+        padding: 0.5rem;
+        --s: 50px;
+        --t: 5px;
+        --g: 20px;
+        padding: calc(var(--g) + var(--t));
+        outline: var(--t) solid #1ff1bf; /* the color here */
+        outline-offset: calc(var(--g) / -1);
+        -webkit-mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 /
+                calc(100% - var(--s)) calc(100% - var(--s)),
+            linear-gradient(#000 0 0) content-box;
+        transition: 0.4s;
+    }
+
+    header h1 {
+        font-size: 7rem;
+        font-weight: 200;
+    }
+
+    .about-me {
+        max-width: 650px;
+    }
+
+    .about-me p {
+        margin: 1rem 0;
+        line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+        .inner-container {
+            padding: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .about-me {
+            border-image: unset;
+            border: none;
+        }
+    }
+</style>
