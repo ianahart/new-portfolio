@@ -1,0 +1,90 @@
+---
+export interface Props {
+    src: string;
+    alt: string;
+}
+
+const { src, alt } = Astro.props as Props;
+---
+
+<>
+    <img class="image" src={src} alt={alt} />
+    <div id="modal" class="hidden">
+        <i class="fa-solid fa-xmark close-icon"></i>
+        <div id="modalContent">
+            <img class="fullscreen-image" src={src} alt={alt} />
+        </div>
+    </div>
+</>
+
+<style>
+    .close-icon {
+        display: flex;
+        justify-content: flex-end;
+        margin: 2rem;
+        color: var(--main-text-color);
+        cursor: pointer;
+        font-size: 3rem;
+    }
+
+    #modalContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .fullscreen-image {
+        border-radius: 8px;
+    }
+
+    .image {
+        width: 150px;
+        height: 150px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    const modal = document.getElementById('modal');
+    const images = document.querySelectorAll('.image');
+    const closeIcons = document.querySelectorAll('.close-icon');
+
+    const openModal = (e: any) => {
+        const target = e.target as Element;
+        target.nextElementSibling.classList.remove('hidden');
+    };
+
+    const closeModal = (e: any) => {
+        const target = e.target as Element;
+        target.parentElement.classList.add('hidden');
+    };
+    images.forEach((image) => image.addEventListener('click', openModal));
+    closeIcons.forEach((icon) => icon.addEventListener('click', closeModal));
+</script>

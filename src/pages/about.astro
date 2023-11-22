@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ImageModal from '../components/ImageModal.astro';
 import me from '../assets/headshot.jpg?url';
 import meSnowboarding from '../assets/snowboard_bg.jpeg?url';
 ---
@@ -29,8 +30,8 @@ import meSnowboarding from '../assets/snowboard_bg.jpeg?url';
                     </p>
                 </div>
                 <div class="img-container">
-                    <img src={me} alt="a headshot of ian hart" />
-                    <img src={meSnowboarding} alt="ian hart snowboarding" />
+                    <ImageModal src={me} alt="a headshot of ian hart" />
+                    <ImageModal src={meSnowboarding} alt="ian hart snowboarding" />
                 </div>
             </div>
         </div>
@@ -43,15 +44,7 @@ import meSnowboarding from '../assets/snowboard_bg.jpeg?url';
         justify-content: center;
     }
 
-    .img-container img {
-        width: 150px;
-        height: 150px;
-        border-radius: 3px;
-        cursor: pointer;
-    }
-
     .about-container {
-        position: relative;
         max-width: 1200px;
         min-height: 600px;
         margin: 0 auto;
