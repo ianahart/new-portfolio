@@ -88,12 +88,12 @@ const { src, alt } = Astro.props as Props;
 
     const openModal = (e: any) => {
         const target = e.target as Element;
-        target.nextElementSibling.classList.remove('hidden');
+        target?.nextElementSibling?.classList.remove('hidden');
     };
 
     const closeModal = (e: any) => {
         const target = e.target as Element;
-        target.parentElement.classList.add('hidden');
+        target?.parentElement?.classList.add('hidden');
     };
     images.forEach((image) => image.addEventListener('click', openModal));
     closeIcons.forEach((icon) => icon.addEventListener('click', closeModal));
