@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/Layout.astro';
+import Social from '../../components/Social.astro';
+import { projects } from '../../data/projects';
+
+export function getStaticPaths() {
+    const projectPaths = projects.map((project) => ({
+        params: { project: project.slug },
+    }));
+
+    return projectPaths;
+}
+
+const { project: param } = Astro.params;
+
+const pageTitle = `Projects | ${param}`;
+
+const project = projects.find((project) => project.slug === param);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="project-container">
+        <div class="image-container">
+            <img src={project.image.src} alt={project.alt} />
+        </div>
+        <section class="project-content">
+            <h1>{project.name}</h1>
+            <div class="underline"></div>
+            <div class="flex-row">
+                <div class="category">
+                    <p>Category</p>
+                    <p>Web Development</p>
+                </div>
+                <div class="about">
+                    <p>{project.desc}</p>
+                    <div class="links">
+                        <Social
+                            href={project.github_url}
+                            text="Github"
+                            icon="fa-brands fa-github"
+                        />
+                        <Social
+                            href={project.website_url}
+                            text="Website"
+                            icon="fa-solid fa-link"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .links {
+                display: flex;
+                align-items: center;
+            }
+
+            .flex-row {
+                display: flex;
+                justify-content: space-between;
+                color: var(--main-text-color);
+            }
+
+            .category {
+                margin-bottom: auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .category p {
+                margin: 0 0.25rem;
+                font-weight: bold;
+            }
+
+            .about {
+                width: 400px;
+            }
+
+            .about p {
+                line-height: 1.8;
+            }
+
+            .underline {
+                height: 3px;
+                width: 750px;
+                background-color: var(--main-text-color);
+                margin-bottom: 1.5rem;
+            }
+
+            .project-content {
+                margin: 0 auto;
+                margin-top: 5rem;
+                flex-direction: column;
+                display: flex;
+                justify-content: center;
+            }
+
+            h1 {
+                color: var(--main-text-color);
+                font-size: 3rem;
+                margin-right: auto;
+                justify-self: flex-start;
+            }
+
+            .project-container {
+                max-width: 750px;
+                margin: 0 auto;
+                margin-top: 5rem;
+            }
+
+            .image-container {
+                margin: 0 auto;
+                height: 500px;
+                width: 750px;
+                margin-bottom: 4rem;
+            }
+
+            .image-container img {
+                border-radius: 8px;
+            }
+
+            @media (max-width: 768px) {
+                .links {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                h1 {
+                    margin: 0 auto;
+                }
+
+                .about {
+                    width: 95%;
+                    text-align: center;
+                }
+
+                .flex-row {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .category {
+                    margin-bottom: 2rem;
+                }
+
+                .image-container {
+                    width: 95%;
+                }
+
+                .underline {
+                    width: 95%;
+                }
+            }
+        </style>
+    </div>
+</BaseLayout>

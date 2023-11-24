@@ -8,6 +8,7 @@ import paranaImg from '../assets/projects/parana.png';
 export const projects = [
   {
     id: 1,
+    slug: 'parana',
     name: 'Parana',
     image: paranaImg,
     alt: 'parana',
@@ -20,6 +21,7 @@ export const projects = [
 
   {
     id: 2,
+    slug: 'iantheloop',
     name: 'iaNtheLoop',
     image: iantheloopImg,
     alt: 'iantheloop',
@@ -32,6 +34,7 @@ export const projects = [
 
   {
     id: 3,
+    slug: 'cosettle',
     name: 'Cosettle',
     image: cosettleImg,
     alt: 'cosettle',
@@ -45,6 +48,7 @@ export const projects = [
   {
     id: 4,
     name: 'Notitum',
+    slug: 'notitum',
     image: notitumImg,
     alt: 'notitum',
     website_url: 'https://notitum.netlify.app/',
@@ -56,6 +60,7 @@ export const projects = [
 
   {
     id: 5,
+    slug: 'redal',
     name: 'Redal',
     image: redal,
     alt: 'Redal',
@@ -68,6 +73,7 @@ export const projects = [
 
   {
     id: 6,
+    slug: 'devtrove',
     name: 'Devtrove',
     image: devtroveImg,
     alt: 'Devtrove',

@@ -29,8 +29,10 @@ const alternateCase = (name: string) => {
                                     data-project={JSON.stringify(project)}
                                     class="project-heading"
                                 >
-                                    <h2>{alternateCase(project.name)}</h2>
-                                    <p>{project.type}</p>
+                                    <a href={`/projects/${project.slug}`}>
+                                        <h2>{alternateCase(project.name)}</h2>
+                                        <p>{project.type}</p>
+                                    </a>
                                 </div>
                             );
                         })
@@ -64,13 +66,18 @@ const alternateCase = (name: string) => {
         }
 
         .project-heading {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             border-bottom: 2px solid var(--main-text-color);
             padding: 1.5rem;
             margin: 1rem;
             cursor: pointer;
+        }
+
+        .project-heading a {
+            display: flex;
+            text-decoration: none;
+            color: var(--main-text-color);
+            align-items: center;
+            justify-content: space-between;
         }
 
         .project-heading:hover h2 {
@@ -84,6 +91,7 @@ const alternateCase = (name: string) => {
 
         .project-heading h2 {
             border-radius: 8px;
+            padding: 0 0.5rem;
             transition: all 0.25s ease-in-out;
         }
 
