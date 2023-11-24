@@ -24,10 +24,41 @@ const { link } = Astro.props as Props;
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
         </div>
+        <div class="underline"></div>
     </a>
 </li>
 
 <style>
+    .underline {
+        height: 3px;
+        width: 0;
+        background: linear-gradient(to bottom, #12205c, rgba(31, 241, 191, 1));
+        transition: all 0.5 ease-in;
+    }
+
+    a:hover .underline {
+        animation: growFull 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes growMin {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100px;
+        }
+    }
+
+    @keyframes growFull {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
     i {
         display: none;
     }
@@ -48,6 +79,11 @@ const { link } = Astro.props as Props;
     }
 
     @media (max-width: 600px) {
+        a:hover .underline {
+            animation: growMin 0.5s;
+            animation-fill-mode: forwards;
+        }
+
         .link {
             margin: 1rem 0;
             padding: 0.5rem;
@@ -75,5 +111,6 @@ const { link } = Astro.props as Props;
             display: flex;
             justify-content: space-between;
         }
+
     }
 </style>
