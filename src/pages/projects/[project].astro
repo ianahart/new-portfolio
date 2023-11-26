@@ -21,10 +21,10 @@ const project = projects.find((project) => project.slug === param);
 <BaseLayout pageTitle={pageTitle}>
     <div class="project-container">
         <div class="image-container">
-            <img src={project.image.src} alt={project.alt} />
+            <img src={project?.image.src} alt={project?.alt} />
         </div>
         <section class="project-content">
-            <h1>{project.name}</h1>
+            <h1>{project?.name}</h1>
             <div class="underline"></div>
             <div class="flex-row">
                 <div class="category">
@@ -32,19 +32,23 @@ const project = projects.find((project) => project.slug === param);
                     <p>Web Development</p>
                 </div>
                 <div class="about">
-                    <p>{project.desc}</p>
-                    <div class="links">
-                        <Social
-                            href={project.github_url}
-                            text="Github"
-                            icon="fa-brands fa-github"
-                        />
-                        <Social
-                            href={project.website_url}
-                            text="Website"
-                            icon="fa-solid fa-link"
-                        />
-                    </div>
+                    <p>{project?.desc}</p>
+                    {
+                        project !== undefined && (
+                            <div class="links">
+                                <Social
+                                    href={project.github_url}
+                                    text="Github"
+                                    icon="fa-brands fa-github"
+                                />
+                                <Social
+                                    href={project.website_url}
+                                    text="Website"
+                                    icon="fa-solid fa-link"
+                                />
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </section>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AboutContent from '../components/AboutContent.astro';
+import Content from '../components/Content.astro';
+import TypeWriterEffect from '../components/TypeWriterEffect.astro';
 import ImageModal from '../components/ImageModal.astro';
 import me from '../assets/headshot.jpg?url';
 import meSnowboarding from '../assets/snowboard_bg.jpeg?url';
@@ -11,9 +12,10 @@ import meSnowboarding from '../assets/snowboard_bg.jpeg?url';
         <div class="inner-container">
             <header>
                 <h1>Welcome.</h1>
+                <TypeWriterEffect />
             </header>
             <div class="content">
-                <AboutContent />
+                <Content />
                 <div class="img-container">
                     <ImageModal src={me} alt="a headshot of ian hart" />
                     <ImageModal src={meSnowboarding} alt="ian hart snowboarding" />
