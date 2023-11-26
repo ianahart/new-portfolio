@@ -1,0 +1,64 @@
+<div class="about-me">
+    <p>
+        I'm a Web Developer from central New Hampshire. Before I got into creating
+        websites and applications, I was a professional snowboarder. I started competing
+        around the East Coast of the US and eventually started to compete in international
+        competitions as well as starring in snowboard films.
+    </p>
+
+    <p>
+        Computers have always been a passion of mine which led me to becoming a web
+        developer. Some people seem to link creativty with art, music, dance, etc. For
+        myself, with programming I can show my creativity by building something that has
+        the possibility to be used by other people and I think that is pretty awesome.
+    </p>
+</div>
+
+<style>
+    .about-me {
+        animation: slideUp 0.75s;
+        margin: 0 auto;
+        padding: 0.5rem;
+        --s: 50px;
+        --t: 5px;
+        --g: 20px;
+        padding: calc(var(--g) + var(--t));
+        outline: var(--t) solid #1ff1bf; /* the color here */
+        outline-offset: calc(var(--g) / -1);
+        -webkit-mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 /
+                calc(100% - var(--s)) calc(100% - var(--s)),
+            linear-gradient(#000 0 0) content-box;
+        transition: 0.4s;
+    }
+
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+
+    .about-me {
+        max-width: 650px;
+    }
+
+    .about-me p {
+        margin: 1rem auto;
+        text-align: center;
+        line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+
+        .about-me {
+            border-image: unset;
+            border: none;
+        }
+    }
+</style>
