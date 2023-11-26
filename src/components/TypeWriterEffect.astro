@@ -1,0 +1,32 @@
+<section class="container">
+    <div id="root"></div>
+</section>
+
+<style>
+    #root {
+        margin-left: 3rem;
+    }
+</style>
+
+<script>
+    // @ts-ignore
+    import Typewriter from 'typewriter-effect/dist/core';
+
+    const root = document.getElementById('root');
+
+    let typewriter = new Typewriter(root, {
+        loop: true,
+        delay: 75,
+    });
+
+    typewriter
+        .pauseFor(2500)
+        .typeString('Hi my name is Ian')
+        .pauseFor(300)
+        .deleteChars(20)
+        .typeString('I am a web developer')
+        .deleteChars(20)
+        .typeString('I am a web developer and a snowboarder')
+        .pauseFor(1000)
+        .start();
+</script>
