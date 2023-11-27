@@ -7,6 +7,11 @@
         id="form"
         netlify-honeypot="bot-field"
     >
+        <p class="hidden">
+            <label>
+                Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+        </p>
         <input type="hidden" name="contact" value="contact" />
         <div class="input-group">
             <label for="name">Your Name:</label>
@@ -30,6 +35,10 @@
 </div>
 
 <style>
+    .hidden {
+        display: none;
+    }
+
     .error-message {
         margin-top: 0.25rem;
         font-size: 0.85rem;
