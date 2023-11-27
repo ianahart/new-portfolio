@@ -1,0 +1,93 @@
+---
+import notfoundImage from '../assets/not_found.png?url';
+import Layout from '../layouts/Layout.astro';
+const pageTitle = '404 Not Found';
+---
+
+<Layout pageTitle={pageTitle}>
+    <div class="container">
+        <header>
+            <h1>Whoops!</h1>
+        </header>
+
+        <div class="tagline">
+            <p>The volcano exploded and melted this page (Page Not Found)</p>
+        </div>
+        <div class="go-back-btn-container">
+            <a href="/">Go Home</a>
+        </div>
+        <img src={notfoundImage} alt="404 not found" />
+    </div>
+    <a
+        class="attribution"
+        href="https://www.freepik.com/free-vector/404-error-with-landscape-concept-illustration_20824299.htm#query=404%20found%20png&position=7&from_view=keyword&track=ais&uuid=1a531c7e-006d-4a29-b307-3ac056f1ef96"
+        >Image by storyset on FreePik</a
+    >
+</Layout>
+
+<style>
+    header h1 {
+        color: var(--main-text-color);
+    }
+
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .tagline {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tagline p {
+        text-align: center;
+        color: var(--main-text-color);
+        font-weight: bold;
+        margin-top: 1rem;
+    }
+
+    .go-back-btn-container {
+        margin-top: 1rem;
+    }
+
+    .go-back-btn-container a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        background: var(--main-blue-color);
+        color: var(--main-text-color);
+        padding: 1rem;
+        height: 35px;
+        width: 200px;
+        transition: all 0.25s ease-in;
+    }
+
+    .go-back-btn-container:hover {
+        opacity: 0.8;
+    }
+
+    img {
+        width: 700px;
+    }
+
+    .attribution {
+        visibility: hidden;
+    }
+
+    @media (max-width: 768px) {
+        img {
+            width: 95%;
+        }
+    }
+</style>
