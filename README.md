@@ -1,54 +1,27 @@
-# Astro Starter Kit: Basics
+# Ian Hart's Portfolio
+<img src="https://camo.githubusercontent.com/6304c99734f33c20bca3a3fcf5610f18f7eedc4ee37ad9111a4a193b390ebea3/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d417374726f26636f6c6f723d424335324545266c6f676f3d417374726f266c6f676f436f6c6f723d464646464646266c6162656c3d">
+<img src ="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://camo.githubusercontent.com/9fe0ddca8c80fd49703246ca3b9a894ddfdc9c1c80f6ab5de92bbe91471dbab8/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d4353533326636f6c6f723d313537324236266c6f676f3d43535333266c6f676f436f6c6f723d464646464646266c6162656c3d">
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Description
+This portfolio website is being used to showcase my personal projects and demostrate my skills as a Web Developer.
+You can learn a little about my background in the about section. I also plan on creating a blog to inside my portfolio website
+to enhance my technical writing skills and write about things that interest me.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Usage
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+You can find a link to my portfolio [here](https://www.ianalexhart.com)
+You can navigate between the **Home page**, **About page**, **Projects page**, and the **Blog page** (coming soon)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-## 🚀 Project Structure
+## Installation
+N/A
 
-Inside of your Astro project, you'll see the following folders and files:
+## Credits
+N/A
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Built With
+- [Astro](https://astro.build/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Netlify](https://www.netlify.com/)
