@@ -29,7 +29,6 @@
 }
 * {
   margin: 0;
-  font-family: 'Manrope', sans-serif;
 }
 
 html,
@@ -65,6 +64,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  font-family: 'Manrope', sans-serif;
 }
 
 body {
@@ -73,3 +73,26 @@ body {
   background-position: center;
   min-height: 100vh;
 }
+
+/*pre {
+  padding: 8px 16px;
+  overflow: auto;
+  border-radius: 4px;
+  background: #343434;
+}
+code {
+  padding: 4px;
+  border-radius: 4px;
+  background: #343434;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace !important;
+  direction: ltr;
+  font-size: 14px;
+}
+pre > code {
+  padding: 0;
+  line-height: 1.5;
+  word-break: normal;
+  white-space: pre;
+  word-spacing: normal;
+  tab-size: 4;
+}*/

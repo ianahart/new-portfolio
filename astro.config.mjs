@@ -5,4 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://ianalexhart.com',
   integrations: [sitemap()],
+  markdown: {
+    syntaxHighlight: 'prism',
+  },
 });
