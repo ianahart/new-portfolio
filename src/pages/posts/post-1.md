@@ -9,12 +9,6 @@ image:
   alt: 'Vue Code'
 ---
 
-```js
-const test = () => {
-  return 'hello';
-};
-```
-
 ## What Are Functions?
 
 In this article I will be explaining functions and how to use them in
