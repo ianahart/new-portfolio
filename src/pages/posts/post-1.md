@@ -9,6 +9,11 @@ image:
   alt: 'Vue Code'
 ---
 
+# What Are Functions And How To Use Them
+
+<br />
+<br />
+
 ## What Are Functions?
 
 In this article I will be explaining functions and how to use them in
