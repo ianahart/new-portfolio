@@ -21,19 +21,6 @@ export const projects = [
 
   {
     id: 2,
-    slug: 'iantheloop',
-    name: 'iaNtheLoop',
-    image: iantheloopImg,
-    alt: 'iantheloop',
-    website_url: 'https://iantheloop.com',
-    github_url: 'https://github.com/ianahart/iantheloop',
-    desc: 'iaNtheLoop is a social media platform built with Laravel, Vue, Sass, and mySQL. files are stored on AWS S3 and the application is being served on a Digital Ocean Droplet. You can find test credentials in the Github README.md.',
-    type: 'Web Development',
-    misc: [],
-  },
-
-  {
-    id: 3,
     slug: 'cosettle',
     name: 'Cosettle',
     image: cosettleImg,
@@ -46,7 +33,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 3,
     name: 'Notitum',
     slug: 'notitum',
     image: notitumImg,
@@ -59,7 +46,7 @@ export const projects = [
   },
 
   {
-    id: 5,
+    id: 4,
     slug: 'redal',
     name: 'Redal',
     image: redal,
@@ -72,7 +59,7 @@ export const projects = [
   },
 
   {
-    id: 6,
+    id: 5,
     slug: 'devtrove',
     name: 'Devtrove',
     image: devtroveImg,
