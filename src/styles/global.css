@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&family=Permanent+Marker&display=swap');
 :root {
-  --main-bg-color: linear-gradient(
+  /*  --main-bg-color: linear-gradient(
     to right top,
     #1f1d1e,
     #222021,
@@ -14,7 +14,9 @@
     #0c294e,
     #092656,
     #12205c
-  );
+  );*/
+  --main-bg-color: radial-gradient(125% 125% at 40% 10%, #000 40%, #12205c 100%) !important;
+
   --main-text-color: #fff;
   --main-black-color: #23262d;
   --secondary-black-color: rgba(0, 0, 0, 0.36);
