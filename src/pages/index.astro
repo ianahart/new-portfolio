@@ -9,89 +9,97 @@ const pageTitle = 'Home';
 ---
 
 <Layout pageTitle={pageTitle}>
-    <h2>I</h2>
-    <h2>Create</h2>
-    <h2>Things</h2>
-    <div class="home-container">
-        <div class="three-container"></div>
-        <div class="quote-container">
-            <FunnyQuote />
-        </div>
-        <div class="socials-container">
-            <Socials />
-        </div>
-        <div class="skills-container">
-            <Skills className="frontend" skills={frontEndSkills} />
-            <Skills className="backend" skills={backendSkills} />
-        </div>
-        <div class="contact-form-container">
-            <ContactForm />
-        </div>
+  <h2>I</h2>
+  <h2>Create</h2>
+  <h2>Things</h2>
+  <div class="home-container">
+    <div class="three-container"></div>
+    <div class="quote-container">
+      <FunnyQuote />
     </div>
-    <style>
-        .socials-container {
-            display: flex;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 3rem auto;
-        }
+    <div class="socials-container">
+      <Socials />
+    </div>
+    <div class="skills-container">
+      <Skills className="frontend" skills={frontEndSkills} />
+      <Skills className="backend" skills={backendSkills} />
+    </div>
+    <div class="contact-form-container">
+      <ContactForm />
+    </div>
+  </div>
+  <style>
+    .socials-container {
+      display: flex;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
 
-        .quote-container {
-            display: flex;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .quote-container {
+      display: flex;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .skills-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-top: 5rem;
-            padding: 1rem;
-            overflow: hidden;
-        }
+    .skills-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: 5rem;
+      padding: 1rem;
+      overflow: hidden;
+    }
 
-        .contact-form-container {
-            display: flex;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 5rem auto;
-            margin-top: 12rem;
-        }
+    .contact-form-container {
+      display: flex;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 5rem auto;
+      margin-top: 12rem;
+    }
 
-        h2 {
-            text-transform: uppercase;
-            text-align: center;
-            font-family: 'Permanent Marker', cursive;
-            font-size: 80px;
-            color: #dadada;
-            text-align: center;
-            text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
-                0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
-                0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
-                0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
-                0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
-                0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
-                0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
-        }
+    h2 {
+      text-transform: uppercase;
+      text-align: center;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 80px;
+      color: #dadada;
+      text-align: center;
+      text-shadow:
+        0 1px 0 hsl(174, 5%, 80%),
+        0 2px 0 hsl(174, 5%, 75%),
+        0 3px 0 hsl(174, 5%, 70%),
+        0 4px 0 hsl(174, 5%, 66%),
+        0 5px 0 hsl(174, 5%, 64%),
+        0 6px 0 hsl(174, 5%, 62%),
+        0 7px 0 hsl(174, 5%, 61%),
+        0 8px 0 hsl(174, 5%, 60%),
+        0 0 5px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.2),
+        0 3px 5px rgba(0, 0, 0, 0.2),
+        0 5px 10px rgba(0, 0, 0, 0.2),
+        0 10px 10px rgba(0, 0, 0, 0.2),
+        0 20px 20px rgba(0, 0, 0, 0.3);
+    }
 
-        canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
 
-        @media (max-width: 768px) {
-            .skills-container {
-                flex-direction: column;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .skills-container {
+        flex-direction: column;
+      }
+    }
+  </style>
 
-    <script>
-        import '../scripts/3dBlocks.ts';
-    </script>
+  <script>
+    import '../scripts/3dBlocks.ts';
+  </script>
 </Layout>
