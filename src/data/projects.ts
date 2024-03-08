@@ -57,38 +57,4 @@ export const projects = [
     desc: 'This is a reddit clone. More description inside the github README along with login credentials.',
     misc: [],
   },
-
-  {
-    id: 5,
-    slug: 'devtrove',
-    name: 'Devtrove',
-    image: devtroveImg,
-    alt: 'Devtrove',
-    website_url: 'https://courageous-pastelito-c380bc.netlify.app/',
-    github_url: 'https://github.com/ianahart/devtrove',
-    desc: 'This is a news aggregator that includes users, profile, posts, likes, upvotes, groups, invitations, websockets, and messages. Made with TypeScript/React, Python/Django.  You can find test credentials in the Github README.md',
-    type: 'Web Development',
-    misc: [
-      {
-        id: 1,
-        name: 'Account',
-        link: 'https://devtrove.s3.amazonaws.com/portfolio/account.png',
-      },
-      {
-        id: 2,
-        name: 'Chat',
-        link: 'https://devtrove.s3.amazonaws.com/portfolio/chat.png',
-      },
-      {
-        id: 3,
-        name: 'Home',
-        link: 'https://devtrove.s3.amazonaws.com/portfolio/home.png',
-      },
-      {
-        id: 4,
-        name: 'Profile',
-        link: 'https://devtrove.s3.amazonaws.com/portfolio/profile.png',
-      },
-    ],
-  },
 ];
