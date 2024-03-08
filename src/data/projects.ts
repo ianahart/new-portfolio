@@ -1,5 +1,4 @@
 import iantheloopImg from '../assets/projects/iantheloop.png';
-import devtroveImg from '../assets/projects/devtrove.png';
 import redal from '../assets/projects/redal.png';
 import notitumImg from '../assets/projects/notitum.png';
 import cosettleImg from '../assets/projects/cosettle.png';
