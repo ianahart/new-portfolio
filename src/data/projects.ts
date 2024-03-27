@@ -3,10 +3,23 @@ import redal from '../assets/projects/redal.png';
 import notitumImg from '../assets/projects/notitum.png';
 import cosettleImg from '../assets/projects/cosettle.png';
 import paranaImg from '../assets/projects/parana.png';
+import melioremImg from '../assets/projects/meliorem.png';
 
 export const projects = [
   {
     id: 1,
+    slug: 'meliorem',
+    name: 'Meliorem',
+    image: melioremImg,
+    alt: 'meliorem',
+    website_url: 'https://meliorem.netlify.app/',
+    github_url: 'https://github.com/ianahart/meliorem',
+    desc: 'Meliorem is a study application built with React and Spring Boot. You can find test credentials in the Github README.md.',
+    type: 'Web Development',
+    misc: [],
+  },
+  {
+    id: 2,
     slug: 'parana',
     name: 'Parana',
     image: paranaImg,
@@ -19,7 +32,7 @@ export const projects = [
   },
 
   {
-    id: 2,
+    id: 3,
     slug: 'cosettle',
     name: 'Cosettle',
     image: cosettleImg,
@@ -32,7 +45,7 @@ export const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
     name: 'Notitum',
     slug: 'notitum',
     image: notitumImg,
@@ -45,7 +58,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 5,
     slug: 'redal',
     name: 'Redal',
     image: redal,
