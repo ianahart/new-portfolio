@@ -16,6 +16,7 @@ export const projects = [
     github_url: 'https://github.com/ianahart/meliorem',
     desc: 'Meliorem is a study application built with React and Spring Boot. You can find test credentials in the Github README.md.',
     type: 'Web Development',
+    demo: 'https://drive.google.com/file/d/1t514WCPX5IIyt5xwq7k65hnHkVBkT9rq/view',
     misc: [],
   },
   {
@@ -28,6 +29,7 @@ export const projects = [
     github_url: 'https://github.com/ianahart/parana',
     desc: 'Parana is an online marketplace for users to get connected with snowboard teachers to learn to snowboard. You can find test credentials in the Github README.md.',
     type: 'Web Development',
+    demo: '',
     misc: [],
   },
 
@@ -41,6 +43,7 @@ export const projects = [
     github_url: 'https://github.com/ianahart/cosettle',
     desc: 'A platform where you can discover coworking spaces to rent and find other people to work with. More description inside the github README along with login credentials.',
     type: 'Web Development',
+    demo: '',
     misc: [],
   },
 
@@ -54,6 +57,7 @@ export const projects = [
     github_url: 'https://github.com/ianahart/notitum',
     desc: 'Built with Spring Boot and React. This is a note organizer application.  You can find test credentials in the bottom of the Github README.md.',
     type: 'Web Development',
+    demo: '',
     misc: [],
   },
 
@@ -67,6 +71,7 @@ export const projects = [
     github_url: 'https://github.com/ianahart/redal',
     type: 'Web Development',
     desc: 'This is a reddit clone. More description inside the github README along with login credentials.',
+    demo: '',
     misc: [],
   },
 ];

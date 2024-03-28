@@ -46,6 +46,9 @@ const project = projects.find((project) => project.slug === param);
                                     text="Website"
                                     icon="fa-solid fa-link"
                                 />
+                                {project.demo.length > 0 &&
+                                 <Social href={project.demo} text="Demo" icon="fa-solid fa-video" />
+                                }
                             </div>
                         )
                     }
