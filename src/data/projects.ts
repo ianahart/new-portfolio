@@ -29,7 +29,7 @@ export const projects = [
     github_url: 'https://github.com/ianahart/parana',
     desc: 'Parana is an online marketplace for users to get connected with snowboard teachers to learn to snowboard. You can find test credentials in the Github README.md.',
     type: 'Web Development',
-    demo: '',
+    demo: 'https://drive.google.com/file/d/1-qNTPgToaw6JbOKekDROUoRLRfkTLMsQ/view',
     misc: [],
   },
 
