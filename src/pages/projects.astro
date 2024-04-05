@@ -4,182 +4,193 @@ import { projects } from '../data/projects';
 const pageTitle = 'Projects';
 
 const alternateCase = (name: string) => {
-    return name
-        .split('')
-        .map((ch, i) => (i % 2 == 0 ? ch.toUpperCase() : ch.toLowerCase()));
+  return name.split('').map((ch, i) => (i % 2 == 0 ? ch.toUpperCase() : ch.toLowerCase()));
 };
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="projects-container">
-        <div class="row">
-            <div class="project-image">
-                <img class="hidden" src="" alt="project image" />
-            </div>
-            <div class="project-list">
-                <div class="projects-heading">
-                    <h1>{alternateCase('projects')}</h1>
-                    <p>{projects.length}</p>
-                </div>
-                <div class="column">
-                    {
-                        projects.map((project) => {
-                            return (
-                                <div
-                                    data-project={JSON.stringify(project)}
-                                    class="project-heading"
-                                >
-                                    <a href={`/projects/${project.slug}`}>
-                                        <h2>{alternateCase(project.name)}</h2>
-                                        <p>{project.type}</p>
-                                    </a>
-                                </div>
-                            );
-                        })
-                    }
-                </div>
-            </div>
+  <div class="projects-container">
+    <div class="row">
+      <div class="project-image">
+        <img class="hidden" src="" alt="project image" />
+      </div>
+      <div class="project-list">
+        <div class="projects-heading">
+          <h1>{alternateCase('projects')}</h1>
+          <p>{projects.length}</p>
         </div>
+        <div id="project-column" class="column">
+          {
+            projects.map((project) => {
+              return (
+                <div data-project={JSON.stringify(project)} class="project-heading">
+                  <a href={`/projects/${project.slug}`}>
+                    <h2>{alternateCase(project.name)}</h2>
+                    <div>
+                      <p>{project.type}</p>
+                      <p class="tools">{project.tools}</p>
+                    </div>
+                  </a>
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
     </div>
-    <style>
-        .projects-heading {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+  </div>
+  <style>
+    .projects-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .project-image img {
-            border-radius: 8px;
-            min-height: 600px;
-            animation: fadeIn 0.7s;
-            animation-fill-mode: forwards;
-            transition: all 0.4s ease-in;
-        }
+    .project-image img {
+      border-radius: 8px;
+      min-height: 600px;
+      animation: fadeIn 0.7s;
+      animation-fill-mode: forwards;
+      transition: all 0.4s ease-in;
+    }
 
-        .projects-heading h1 {
-            font-size: 2rem;
-        }
+    .projects-heading h1 {
+      font-size: 2rem;
+    }
 
-        .projects-heading p {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+    .projects-heading p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-        .project-heading {
-            border-bottom: 2px solid var(--main-text-color);
-            padding: 1.5rem;
-            margin: 1rem;
-            cursor: pointer;
-        }
+    .tools {
+      font-size: 0.85rem;
+      color: gray;
+    }
 
-        .project-heading a {
-            display: flex;
-            text-decoration: none;
-            color: var(--main-text-color);
-            align-items: center;
-            justify-content: space-between;
-        }
+    .project-heading {
+      border-bottom: 2px solid var(--main-text-color);
+      padding: 1.5rem;
+      margin: 1rem;
+      cursor: pointer;
+    }
 
-        .project-heading:hover h2 {
-            background: linear-gradient(to bottom, #12205c, rgba(31, 241, 191, 1));
-            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-                0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-                0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-                0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-                0 20px 20px rgba(0, 0, 0, 0.15);
-        }
+    .project-heading a {
+      display: flex;
+      text-decoration: none;
+      color: var(--main-text-color);
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .project-heading h2 {
-            border-radius: 8px;
-            padding: 0 0.5rem;
-            transition: all 0.25s ease-in-out;
-        }
+    .project-heading:hover h2 {
+      background: linear-gradient(to bottom, #12205c, rgba(31, 241, 191, 1));
+      text-shadow:
+        0 1px 0 #ccc,
+        0 2px 0 #c9c9c9,
+        0 3px 0 #bbb,
+        0 4px 0 #b9b9b9,
+        0 5px 0 #aaa,
+        0 6px 1px rgba(0, 0, 0, 0.1),
+        0 0 5px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.3),
+        0 3px 5px rgba(0, 0, 0, 0.2),
+        0 5px 10px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.2),
+        0 20px 20px rgba(0, 0, 0, 0.15);
+    }
 
-        .row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .project-heading h2 {
+      border-radius: 8px;
+      padding: 0 0.5rem;
+      transition: all 0.25s ease-in-out;
+    }
 
-        .project-image {
-            border-radius: 8px;
-            min-height: 600px;
-            overflow: hidden;
-            width: 600px;
-        }
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .project-list {
-            padding: 1rem;
-            min-height: 600px;
-            width: 500px;
-        }
+    .project-image {
+      border-radius: 8px;
+      min-height: 600px;
+      overflow: hidden;
+      width: 600px;
+    }
 
-        .projects-container {
-            max-width: 1200px;
-            min-height: 600px;
-            margin: 0 auto;
-            margin-top: 5rem;
-            color: var(--main-text-color);
-        }
+    .project-list {
+      padding: 1rem;
+      min-height: 600px;
+      width: 500px;
+    }
 
-        .hidden {
-            display: none;
-        }
+    .projects-container {
+      max-width: 1200px;
+      min-height: 600px;
+      margin: 0 auto;
+      margin-top: 5rem;
+      color: var(--main-text-color);
+    }
 
-        @media (max-width: 1000px) {
-            .project-image {
-                display: none;
-            }
-        }
+    .hidden {
+      display: none;
+    }
 
-        @media (max-width: 600px) {
-            .project-list {
-                width: 95%;
-            }
-        }
+    @media (max-width: 1000px) {
+      .project-image {
+        display: none;
+      }
+    }
 
-        @keyframes fadeIn {
-            0% {
-                transform: scale(1);
-                opacity: 0;
-            }
+    @media (max-width: 600px) {
+      .project-list {
+        width: 95%;
+      }
+    }
 
-            100% {
-                transform: scale(1.1);
-                opacity: 1;
-            }
-        }
-    </style>
+    @keyframes fadeIn {
+      0% {
+        transform: scale(1);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+  </style>
 </BaseLayout>
 
 <script>
-    const projects = document.querySelectorAll('.project-heading');
-    const projectImageContainer =
-        document.querySelector<HTMLDivElement>('.project-image');
+  const projects = document.querySelectorAll('.project-heading');
+  const projectImageContainer = document.querySelector<HTMLDivElement>('.project-image');
+  const projectColumn = document.getElementById('project-column');
 
-    const getProjectImage = (target: HTMLElement) => {
-        const project = target.getAttribute('data-project');
-        return JSON.parse(project ?? '').image.src;
-    };
+  const getProjectImage = (target: HTMLElement) => {
+    const project = target.getAttribute('data-project');
+    return JSON.parse(project ?? '').image.src;
+  };
 
-    const applyProjectImage = (src: string, projectImageContainer: HTMLElement) => {
-        projectImageContainer.firstElementChild?.classList.remove('hidden');
-        projectImageContainer.firstElementChild?.setAttribute('src', src);
-    };
+  const applyProjectImage = (src: string, projectImageContainer: HTMLElement) => {
+    projectImageContainer.firstElementChild?.classList.remove('hidden');
+    projectImageContainer.firstElementChild?.setAttribute('src', src);
+  };
 
-    const handleMouseEnter = (e: Event) => {
-        const target = e.target as HTMLElement;
-        const projectImage = getProjectImage(target);
-        applyProjectImage(projectImage, projectImageContainer!);
-    };
+  const handleMouseEnter = (e: Event) => {
+    const target = e.target as HTMLElement;
+    const projectImage = getProjectImage(target);
+    applyProjectImage(projectImage, projectImageContainer!);
+  };
 
-    const handleMouseLeave = () => {
-        projectImageContainer?.firstElementChild?.setAttribute('src', '');
-        projectImageContainer?.firstElementChild?.classList.add('hidden');
-    };
+  const handleMouseLeave = () => {
+    projectImageContainer?.firstElementChild?.setAttribute('src', '');
+    projectImageContainer?.firstElementChild?.classList.add('hidden');
+  };
 
-    projects.forEach((project) => {
-        project.addEventListener('mouseenter', handleMouseEnter);
-        project.addEventListener('mouseleave', handleMouseLeave);
-    });
+  projects.forEach((project) => {
+    project.addEventListener('mouseenter', handleMouseEnter);
+    project.addEventListener('mouseleave', handleMouseLeave);
+  });
 </script>
