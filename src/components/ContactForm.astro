@@ -1,137 +1,139 @@
 <div class="form-container">
-    <h3>Get In Touch</h3>
-    <form name="contact" data-netlify="true" id="form" netlify-honeypot="bot-field">
-        <p class="hidden">
-            <label>
-                Don’t fill this out if you’re human: <input name="bot-field" />
-            </label>
-        </p>
-        <input type="hidden" name="contact" value="feedback" />
-        <div class="input-group">
-            <label for="name">Your Name:</label>
-            <input placeholder="Name..." type="text" id="name" name="name" />
-            <p class="error-message hidden"></p>
-        </div>
-        <div class="input-group">
-            <label for="email">Your Email:</label>
-            <input placeholder="Email..." type="email" id="email" name="email" />
-            <p class="error-message hidden"></p>
-        </div>
-        <div class="input-group">
-            <label for="message">Your Message:</label>
-            <textarea placeholder="Message..." id="message" name="message"></textarea>
-            <p class="error-message hidden"></p>
-        </div>
-        <div class="btn-container">
-            <button type="submit">Send</button>
-        </div>
-    </form>
+  <h3>Get In Touch</h3>
+  <form name="contact" data-netlify="true" id="form" netlify-honeypot="bot-field">
+    <p class="hidden">
+      <label>
+        Don’t fill this out if you’re human: <input name="bot-field" />
+      </label>
+    </p>
+    <input type="hidden" name="contact" value="feedback" />
+    <div class="input-group">
+      <label for="name">Your Name:</label>
+      <input placeholder="Name..." type="text" id="name" name="name" />
+      <p class="error-message hidden"></p>
+    </div>
+    <div class="input-group">
+      <label for="email">Your Email:</label>
+      <input placeholder="Email..." type="email" id="email" name="email" />
+      <p class="error-message hidden"></p>
+    </div>
+    <div class="input-group">
+      <label for="message">Your Message:</label>
+      <textarea placeholder="Message..." id="message" name="message"></textarea>
+      <p class="error-message hidden"></p>
+    </div>
+    <div class="btn-container">
+      <button type="submit">Send</button>
+    </div>
+  </form>
 </div>
 
 <style>
-    .hidden {
-        display: none;
-    }
+  .hidden {
+    display: none;
+  }
 
-    .error-message {
-        margin-top: 0.25rem;
-        font-size: 0.85rem;
-        color: red;
-    }
+  .error-message {
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    color: red;
+  }
 
-    h3 {
-        color: var(--main-text-color);
-        text-align: center;
-        font-size: 1.6rem;
-    }
+  h3 {
+    color: var(--main-text-color);
+    text-align: center;
+    font-size: 1.6rem;
+  }
 
+  .form-container {
+    min-height: 250px;
+    width: 550px;
+    transform: translateY(200px);
+    transition: all 0.25s ease-in;
+    padding: 0.5rem;
+    background: var(--main-black-color);
+    border-radius: 8px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .input-group label {
+    font-family: 'Manrope', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--main-text-color);
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+  }
+
+  .input-group input {
+    color: #ddd;
+    background: #2a2a2c;
+    font-family: 'Manrope', sans-serif !important;
+    border: none;
+    border-radius: 12px;
+    height: 40px;
+  }
+
+  .input-group textarea {
+    color: #ddd;
+    background: #2a2a2c;
+    font-family: 'Manrope', sans-serif !important;
+    border: none;
+    height: 120px;
+    border-radius: 12px;
+  }
+
+  .btn-container {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-container button {
+    background-color: var(--main-blue-color);
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(38, 58, 142, 0.4);
+
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+  }
+
+  .btn-container button:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 600px) {
     .form-container {
-        min-height: 250px;
-        width: 550px;
-        transform: translateY(200px);
-        transition: all 0.25s ease-in;
-        padding: 0.5rem;
-        background: var(--main-black-color);
-        border-radius: 8px;
+      width: 95%;
+      margin: 0 auto;
     }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .input-group {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin: 1.5rem 0;
-    }
-
-    .input-group label {
-        font-family: 'Manrope', sans-serif;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        color: var(--main-text-color);
-        margin-bottom: 0.25rem;
-        font-weight: bold;
-    }
-
-    .input-group input {
-        color: #ddd;
-        background: #2a2a2c;
-        border: none;
-        border-radius: 12px;
-        height: 40px;
-    }
-
-    .input-group textarea {
-        color: #ddd;
-        background: #2a2a2c;
-        border: none;
-        height: 120px;
-        border-radius: 12px;
-    }
-
-    .btn-container {
-        margin: 1.5rem 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .btn-container button {
-        background-color: var(--main-blue-color);
-        color: rgba(255, 255, 255, 1);
-        box-shadow: 0 5px 15px rgba(38, 58, 142, 0.4);
-
-        width: 200px;
-        height: 40px;
-        border-radius: 8px;
-        border: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        transition: all 0.25s ease-out;
-        cursor: pointer;
-    }
-
-    .btn-container button:hover {
-        opacity: 0.7;
-    }
-
-    @media (max-width: 600px) {
-        .form-container {
-            width: 95%;
-            margin: 0 auto;
-        }
-    }
+  }
 </style>
 
 <script>
-    import { createObserver, handleFormSubmit } from '../scripts/form.ts';
+  import { createObserver, handleFormSubmit } from '../scripts/form.ts';
 
-    const target = document.querySelector<HTMLDivElement>('.form-container')!;
-    const form = document.getElementById('form') as HTMLFormElement;
+  const target = document.querySelector<HTMLDivElement>('.form-container')!;
+  const form = document.getElementById('form') as HTMLFormElement;
 
-    createObserver(target);
-    handleFormSubmit(form);
+  createObserver(target);
+  handleFormSubmit(form);
 </script>
