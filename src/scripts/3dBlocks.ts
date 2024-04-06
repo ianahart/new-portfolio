@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -18,24 +17,26 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
 });
 
-var geometry = new THREE.BoxGeometry(1, 1, 1);
-var material = new THREE.MeshStandardMaterial({
-  color: 0x007fff,
-  flatShading: false,
-  metalness: 0.01,
-  roughness: 0,
-});
-var cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+const loader = new THREE.TextureLoader();
 
-var geometry = new THREE.BoxGeometry(3, 3, 3);
-var material = new THREE.MeshStandardMaterial({
-  color: '#dadada',
-  wireframe: true,
-  transparent: true,
-});
-var wireframeCube = new THREE.Mesh(geometry, material);
-scene.add(wireframeCube);
+// Load textures for each side of the cube
+const textures = [
+  loader.load('https://res.cloudinary.com/dap5r6vfu/image/upload/v1712361791/snowboard_pic_06_ecwiyq.jpg'),
+  loader.load('https://res.cloudinary.com/dap5r6vfu/image/upload/v1712361791/snowboard_pic_05_w1omce.jpg'),
+  loader.load('https://res.cloudinary.com/dap5r6vfu/image/upload/v1712361790/snowboard_pic_04_pndey7.jpg'),
+  loader.load('https://res.cloudinary.com/dap5r6vfu/image/upload/v1712361789/snowboard_pic_03_zezc3p.jpg'),
+  loader.load('https://res.cloudinary.com/dap5r6vfu/image/upload/v1712361788/snowboard_pic_02_r9nebh.jpg'),
+  loader.load('https://res.cloudinary.com/dap5r6vfu/image/upload/v1712361788/snowboard_pic_01_llpkyd.jpg'),
+];
+
+// Create materials with textures
+const materials = textures.map((texture) => new THREE.MeshBasicMaterial({ map: texture }));
+
+// Create cube geometry with materials
+const geometry = new THREE.BoxGeometry(3, 3, 3);
+const cube = new THREE.Mesh(geometry, materials);
+
+scene.add(cube);
 
 const color = 0xffffff;
 const intensity = 1;
@@ -44,10 +45,8 @@ scene.add(light);
 
 function animate() {
   requestAnimationFrame(animate);
-  cube.rotation.x += 0.14;
-  cube.rotation.y += 0.04;
-  wireframeCube.rotation.x -= 0.01;
-  wireframeCube.rotation.y -= 0.01;
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
   renderer.render(scene, camera);
 }
 animate();
