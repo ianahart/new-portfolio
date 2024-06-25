@@ -4,42 +4,43 @@ import BlogPost from '../components/BlogPost.astro';
 const pageTitle = 'Blog';
 const allPosts = await Astro.glob('../pages/posts/*.md');
 allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
-
 ---
 
 <Layout pageTitle={pageTitle}>
-    <div class="blog-posts">
-        <ul>
-            {
-                allPosts.map((post) => {
-                    return (
-                        <BlogPost
-                            imageSrc={post.frontmatter.image.url}
-                            url={post.url!}
-                            title={post.frontmatter.title}
-                            description={post.frontmatter.description}
-                        />
-                    );
-                })
-            }
-        </ul>
-    </div>
+  <h2>Ian's Code Corner</h2>
+  <div class="blog-posts">
+    <ul>
+      {
+        allPosts.map((post) => {
+          return (
+            <BlogPost
+              imageSrc={post.frontmatter.image.url}
+              url={post.url!}
+              title={post.frontmatter.title}
+              description={post.frontmatter.description}
+              pubDate={post.frontmatter.pubDate}
+            />
+          );
+        })
+      }
+    </ul>
+  </div>
 </Layout>
 
 <style>
-    .blog-posts {
-        margin-top: 5rem;
-        display: flex;
-        justify-content: center;
-    }
+  .blog-posts {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+  }
 
-    h2 {
-        font-size: 4rem;
-        text-align: center;
-        color: var(--main-text-color);
-    }
+  h2 {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--main-text-color);
+  }
 
-    ul {
-        padding: 0;
-    }
+  ul {
+    padding: 0;
+  }
 </style>

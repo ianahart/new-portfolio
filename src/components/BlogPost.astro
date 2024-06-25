@@ -1,57 +1,83 @@
 ---
 export interface Props {
-    imageSrc: string;
-    title: string;
-    url: string;
-    description: string;
+  imageSrc: string;
+  title: string;
+  url: string;
+  description: string;
+  pubDate: string;
 }
 
-const { imageSrc, title, url, description } = Astro.props as Props;
+const { imageSrc, title, url, description, pubDate } = Astro.props as Props;
 ---
 
 <li>
-    <a href={url}>
-        <div class="content">
-            <p class="title">{title}</p>
-            <p class="description">{description}</p>
-        </div>
-        <img src={imageSrc} alt={title} />
-    </a>
+  <a href={url}>
+    <div class="content">
+      <h3 class="title">{title}</h3>
+      <p class="description">{description}</p>
+      <p class="pub-date">{pubDate.split('T')[0]}</p>
+    </div>
+    <img src={imageSrc} alt={title} />
+  </a>
 </li>
 
 <style>
-    .title {
-        font-weight: bold;
+  .title {
+    font-weight: bold;
+  }
+
+  h3 {
+    margin: 1rem;
+  }
+
+  p {
+    margin: 1rem;
+    color: #b0b0b6;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    list-style-type: none;
+    background: #2a2929;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--main-box-shadow);
+  }
+
+  li:hover {
+    opacity: 0.7;
+  }
+
+  img {
+    margin: 0.5rem 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+  }
+
+  .pub-date {
+      font-style: italic;
+  }
+
+  @media (max-width: 600px) {
+    img {
+      width: 100%;
     }
 
     p {
-        margin: 1rem;
+      text-align: center;
     }
-
     a {
-        text-decoration: none;
-        color: var(--main-text-color);
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-
-    li {
-        list-style-type: none;
-        background: #2a2929;
-        padding: 1rem;
-        margin: 1rem;
-        border-radius: 8px;
-        box-shadow: var(--main-box-shadow);
-    }
-
-    li:hover {
-        opacity: 0.7;
-    }
-
-    img {
-        margin: 0.5rem 0;
-        width: 150px;
-        height: 150px;
-        border-radius: 8px;
-    }
+  }
 </style>
