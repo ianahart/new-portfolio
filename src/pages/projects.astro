@@ -184,6 +184,7 @@ const alternateCase = (name: string) => {
   const projects = document.querySelectorAll('.project-heading');
   const projectImageContainer = document.querySelector<HTMLDivElement>('.project-image');
   const projectColumn = document.getElementById('project-column');
+  console.log(projectColumn)
 
   const getProjectImage = (target: HTMLElement) => {
     const project = target.getAttribute('data-project');
