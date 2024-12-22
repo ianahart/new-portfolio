@@ -1,12 +1,24 @@
-import redal from '../assets/projects/redal.png';
-import notitumImg from '../assets/projects/notitum.png';
 import cosettleImg from '../assets/projects/cosettle.png';
 import paranaImg from '../assets/projects/parana.png';
 import melioremImg from '../assets/projects/meliorem.png';
+import codeoverwatchImg from '../assets/projects/overwatch.png';
 
 export const projects = [
   {
     id: 1,
+    slug: 'codeoverwatch',
+    name: 'codeoverwatch',
+    image: codeoverwatchImg,
+    alt: 'codeoverwatch',
+    website_url: 'https://codeoverwatch.com',
+    github_url: 'https://github.com/ianahart/overwatch',
+    desc: 'Codeoverwatch is a market place for developers where you can get your code reviewed by professionals. For technology it includes postgresSQL,Spring Boot,React, Tailwind CSS, Redux, Redis, and more.',
+    type: 'Web Development',
+    tools: 'React // Spring Boot',
+    misc: [],
+  },
+  {
+    id: 2,
     slug: 'meliorem',
     name: 'Meliorem',
     image: melioremImg,
@@ -20,7 +32,7 @@ export const projects = [
     misc: [],
   },
   {
-    id: 2,
+    id: 3,
     slug: 'parana',
     name: 'Parana',
     image: paranaImg,
@@ -33,9 +45,8 @@ export const projects = [
     demo: 'https://drive.google.com/file/d/1-qNTPgToaw6JbOKekDROUoRLRfkTLMsQ/view',
     misc: [],
   },
-
   {
-    id: 3,
+    id: 4,
     slug: 'cosettle',
     name: 'Cosettle',
     image: cosettleImg,
@@ -45,36 +56,6 @@ export const projects = [
     desc: 'Built with Spring Boot and React. This is a platform where you can discover coworking spaces to rent and find other people to work with. More description inside the github README along with login credentials.',
     tools: 'React // Spring Boot',
     type: 'Web Development',
-    demo: '',
-    misc: [],
-  },
-
-  {
-    id: 4,
-    name: 'Notitum',
-    slug: 'notitum',
-    image: notitumImg,
-    alt: 'notitum',
-    website_url: 'https://notitum.netlify.app/',
-    github_url: 'https://github.com/ianahart/notitum',
-    desc: 'Built with Spring Boot and React. This is a note organizer application.  You can find test credentials in the bottom of the Github README.md.',
-    type: 'Web Development',
-    tools: 'React // Spring Boot',
-    demo: '',
-    misc: [],
-  },
-
-  {
-    id: 5,
-    slug: 'redal',
-    name: 'Redal',
-    image: redal,
-    alt: 'Redal',
-    website_url: 'https://chic-empanada-6c3274.netlify.app/login',
-    github_url: 'https://github.com/ianahart/redal',
-    type: 'Web Development',
-    tools: 'React // Django',
-    desc: 'Built with Django and React. This is a reddit clone. More description inside the github README along with login credentials.',
     demo: '',
     misc: [],
   },
