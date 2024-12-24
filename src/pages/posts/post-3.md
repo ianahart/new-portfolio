@@ -67,6 +67,7 @@ The OR operator does exactly what you think it does. The OR operator is denoted 
 
 - [Regex Learn](https://regexlearn.com/learn/regex101)
 - [Regex101](https://regex101.com/)
+- [PHPrex](https://phphub.net/regex/)
 
 ## Author
 
