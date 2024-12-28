@@ -15,6 +15,7 @@ export const projects = [
     desc: 'Codeoverwatch is a market place for developers where you can get your code reviewed by professionals. For technology it includes postgresSQL,Spring Boot,React, Tailwind CSS, Redux, Redis, and more.',
     type: 'Web Development',
     tools: 'React // Spring Boot',
+    demo: 'https://drive.google.com/file/d/1Ob4DqeQqYGlvmffQcijJm1IAyjIX-Wmh/view',
     misc: [],
   },
   {
